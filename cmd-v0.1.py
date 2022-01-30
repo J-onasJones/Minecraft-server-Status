@@ -4,9 +4,6 @@ from time import sleep
 ip = input("Please Enter server IP: ")
 port = input("Enter Port (press enter for default port 25565): ")
 
-#temporary variable def
-ip = "simp.ztereohype.codes"
-
 if port == "":
     port = "25565"
 
