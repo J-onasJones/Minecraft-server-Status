@@ -1,5 +1,7 @@
-from mcstatus import MinecraftServer
-from time import sleep
+from mcstatus import JavaServer
+
+# You can pass the same address you'd enter into the address field in minecraft into the 'lookup' function
+from mcstatus import JavaServer
 
 ip = input("Please Enter server IP: ")
 port = input("Enter Port (press enter for default port 25565): ")
@@ -7,7 +9,9 @@ port = input("Enter Port (press enter for default port 25565): ")
 if port == "":
     port = "25565"
 
-server = MinecraftServer.lookup(ip + ":" + port)
+print(ip + ":" + port)
+
+server = JavaServer.lookup(ip + ":" + port)
 
 
 while True:
