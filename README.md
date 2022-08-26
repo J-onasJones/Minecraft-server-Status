@@ -1,5 +1,5 @@
 # Minecraft-server-Status
-This (very) small python script allows you to view any Minecraft server's status Information
+This small python script allows you to view any Minecraft server's status Information
 ##### Usage
 Download the file, install python (if not already installed), install `mcstatus` (`pip install mcstatus`) and `time` (`pip install time`) and launch the program by executing it with `python cmd.py` on windows and `python3 cmd.py` on MacOS and Linux (replace 'cmd.py' with correct filename). Make sure that you first locate your download location with the command `cd Downloads` (replace 'Downloads' with your custom location if needed).
 
