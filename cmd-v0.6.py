@@ -3,6 +3,12 @@ from time import sleep
 
 ip = input("Please Enter server IP: ")
 port = input("Enter Port (press enter for default port 25565, enter 0 if unknown): ")
+delay = input("How many seconds do you want in between status updates?: ")
+
+if delay == "":
+    delay_int = 0
+
+delay_int = int(delay)
 
 if port == "":
     port = "25565"
@@ -26,7 +32,7 @@ if port == "0":
         print(f"players: {status.players.online}/{status.players.max}")
         print(f"Players Online: {query.players.names}")
         print("\n")
-        wait(3)
+        sleep(delay_int)
 
 if port != "0":
     while True:
@@ -42,4 +48,4 @@ if port != "0":
         print(f"players: {status.players.online}/{status.players.max}")
         print(f"Players Online: {query.players.names}")
         print("\n")
-        wait(3)
+        sleep(delay_int)
