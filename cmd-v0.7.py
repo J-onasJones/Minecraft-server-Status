@@ -22,6 +22,7 @@ if port == "0":
     while True:
         status = server.status()
         query = server.query()
+        ping = server.ping()
         print("---------- " + ip + " ----------")
         print(f"version: v{status.version.name} (protocol {status.version.protocol})")
         print(f'description: "{status.description}"')
@@ -29,6 +30,7 @@ if port == "0":
         print(f"host: {query.raw['hostip']}:{query.raw['hostport']}")
         print(f"software: v{query.software.version} {query.software.brand}")
         print(f"plugins: {query.software.plugins}")
+        print(f"ping: {ping} ms")
         print(f"players: {status.players.online}/{status.players.max}")
         print(f"Players Online: {query.players.names}")
         print("\n")
@@ -38,6 +40,7 @@ if port != "0":
     while True:
         status = server.status()
         query = server.query()
+        ping = server.ping()
         print("---------- " + ip + ":" + port + " ----------")
         print(f"version: v{status.version.name} (protocol {status.version.protocol})")
         print(f'description: "{status.description}"')
@@ -45,6 +48,7 @@ if port != "0":
         print(f"host: {query.raw['hostip']}:{query.raw['hostport']}")
         print(f"software: v{query.software.version} {query.software.brand}")
         print(f"plugins: {query.software.plugins}")
+        print(f"ping: {ping} ms")
         print(f"players: {status.players.online}/{status.players.max}")
         print(f"Players Online: {query.players.names}")
         print("\n")
