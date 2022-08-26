@@ -6,8 +6,9 @@ Download the file, install python (if not already installed), install `mcstatus`
 ##### Status Infos
 1. Minecraft Version
 2. MOTD (message of the day)
-3. host (IP adress of the server and port)
+3. host (IP address of the server and port)
 4. Software (Minecraft version and Mod/Plugin Loader if any installed on the server)
 5. Plugins (if any installed)
-6. Players (`online Players`/`Max Players`)
-7. Players Online (list of online Players)
+6. Ping (number of miliseconds it took for the script to reach the server)
+7. Players (`online Players`/`Max Players`)
+8. Players Online (list of online Players)
