@@ -3,21 +3,20 @@ from time import sleep
 
 ip = input("Please Enter server IP: ")
 port = input("Enter Port (press enter for default port 25565, enter * if unknown): ")
-q_port = input("Enter Query Port (press enter for default port 25565 or if unknown): ") # added query port input
+q_port = input("Enter Query Port (press enter for matching or if unknown): ") # added query port input
 delay = input("How many seconds do you want in between status updates?: ")
 
 if delay == "":
     delay = "0"
 
-# why the delay here?
-#delay_int = int(delay)
+delay_int = int(delay)
 
 if port == "":
     port = "25565"
 
 # query port set to default if empty
 if q_port == "":
-    q_port = "25565"
+    q_port = port
 
 if port == "*":
     server = JavaServer.lookup(ip)
