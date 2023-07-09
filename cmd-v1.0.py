@@ -14,7 +14,7 @@ delay_int = int(delay)
 if port == "":
     port = "25565"
 
-# query port set to default if empty
+# query port set to matching if empty
 if q_port == "":
     q_port = port
 
