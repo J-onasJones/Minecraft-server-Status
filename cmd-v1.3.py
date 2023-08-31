@@ -3,7 +3,6 @@ from time import sleep
 
 ip = input("Please Enter server IP: ")
 port = input("Enter Port (press enter for default port 25565, enter * if unknown): ")
-q_port = input("Enter Query Port (press enter for matching or if unknown): ") # added query port input
 delay = input("How many seconds do you want in between status updates?: ")
 
 if delay == "":
@@ -14,17 +13,13 @@ delay_int = int(delay)
 if port == "":
     port = "25565"
 
-# query port set to matching if empty
-if q_port == "":
-    q_port = port
-
 if port == "*":
     server = JavaServer.lookup(ip)
 else:
     server = JavaServer.lookup(ip + ":" + port)
 
 try:
-    server.query(query_port=int(q_port))
+    server.query()
     query = True
 except:
     print("Query port is wrong or query is disabled.")
@@ -75,7 +70,7 @@ if port != "*":
         print(f"Ping: {ping} ms")
         print(f"Players: {status.players.online}/{status.players.max}")
 
-        if query:
+        if query and status.players.online > 0:
             print(f"Players Online: {query.players.names}")
         
         print("\n")
